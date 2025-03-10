@@ -2,8 +2,11 @@ import os
 import requests
 from datetime import datetime
 from geopy.geocoders import Nominatim
+from dotenv import load_dotenv
 
-user_api = os.environ['weather_api_key']
+load_dotenv()
+user_api = os.getenv("OPEN_WEATHER_MAP_KEY")
+
 city = input("Enter the city name: ")
 
 geolocator = Nominatim(user_agent="weather_api")
